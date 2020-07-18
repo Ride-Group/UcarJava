@@ -1,10 +1,10 @@
-package com.github.zhangchunsheng.ucaroauth2.testbase;
+package com.github.zhangchunsheng.ucarride.testbase;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import me.zhangchunsheng.ucar.common.config.UcarConfig;
 
 /**
- * The type Xml ucar oauth2 config.
+ * The type Xml ucar config.
  */
 @XStreamAlias("xml")
 public class XmlUcarConfig extends UcarConfig {
@@ -41,4 +41,5 @@ public class XmlUcarConfig extends UcarConfig {
     public void setClientSecret(String clientSecret) {
         this.clientSecret = clientSecret;
     }
+
 }

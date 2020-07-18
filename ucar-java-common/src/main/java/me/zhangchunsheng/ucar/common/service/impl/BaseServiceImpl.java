@@ -49,6 +49,11 @@ public abstract class BaseServiceImpl implements UcarService {
         return this.getConfig().getBaseUrl();
     }
 
+    @Override
+    public String getRideBaseUrl() {
+        return this.getConfig().getRideBaseUrl();
+    }
+
     /**
      * 只要确保你的编码输入是正确的,就可以忽略掉 UnsupportedEncodingException
      *

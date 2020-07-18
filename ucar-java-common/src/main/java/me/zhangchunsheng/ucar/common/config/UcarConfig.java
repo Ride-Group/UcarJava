@@ -17,12 +17,10 @@ import java.security.KeyStore;
  */
 @Data
 public class UcarConfig {
-    private static final boolean USE_SANDBOX = true;
-
-    private static final String SANDBOX_OAUTH2_BASE_URL = "https://sandboxoauth.10101111.com";
-    private static final String SANDBOX_BASE_URL = "https://sandboxapi.10101111.com";
-    private static final String DEFAULT_OAUTH2_BASE_URL = "https://oauth.10101111.com";
-    private static final String DEFAULT_BASE_URL = "https://openapi.10101111.com";
+    protected static final String SANDBOX_OAUTH2_BASE_URL = "https://sandboxoauth.10101111.com";
+    protected static final String SANDBOX_BASE_URL = "https://sandboxapi.10101111.com";
+    protected static final String DEFAULT_OAUTH2_BASE_URL = "https://oauth.10101111.com";
+    protected static final String DEFAULT_BASE_URL = "https://openapi.10101111.com";
 
     /**
      * 神州专车接口请求地址域名部分.
@@ -43,6 +41,11 @@ public class UcarConfig {
      * http请求数据读取等待时间.
      */
     private int httpTimeout = 10000;
+
+    /**
+     * 神州专车useSandbox
+     */
+    private boolean useSandbox;
 
     /**
      * 神州专车clientId.
@@ -71,7 +74,7 @@ public class UcarConfig {
      * @return 神州专车接口请求地址域名
      */
     public String getBaseUrl() {
-        if(USE_SANDBOX) {
+        if(this.isUseSandbox()) {
             return SANDBOX_BASE_URL;
         }
         if (StringUtils.isEmpty(this.baseUrl)) {
@@ -87,7 +90,7 @@ public class UcarConfig {
      * @return 神州专车接口请求地址域名
      */
     public String getOauth2BaseUrl() {
-        if(USE_SANDBOX) {
+        if(this.isUseSandbox()) {
             return SANDBOX_OAUTH2_BASE_URL;
         }
         if (StringUtils.isEmpty(this.baseUrl)) {
@@ -95,5 +98,18 @@ public class UcarConfig {
         }
 
         return this.baseUrl;
+    }
+
+    /**
+     * 返回所设置的神州专车接口请求地址域名.
+     *
+     * @return 神州专车接口请求地址域名
+     */
+    public String getRideBaseUrl() {
+        if(this.isUseSandbox()) {
+            return SANDBOX_BASE_URL;
+        }
+
+        return DEFAULT_BASE_URL;
     }
 }

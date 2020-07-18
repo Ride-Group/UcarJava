@@ -36,6 +36,7 @@
   <modules>
     <module>ucar-java-common</module>
     <module>ucar-java-oauth2</module>
+    <module>ucar-java-ride</module>
     <module>spring-boot-starters</module>
   </modules>
 

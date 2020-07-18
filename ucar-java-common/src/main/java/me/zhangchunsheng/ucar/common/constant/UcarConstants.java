@@ -37,5 +37,7 @@ public class UcarConstants {
         public static final String OAUTH_PASSWORD_TOKEN = "/oauth/token?client_id=%s&client_secret=%s&grant_type=password&username=%s&password=%s";
         public static final String OAUTH_TOKEN = "/oauth/token";
         public static final String OAUTH_CLIENT_TOKEN = "client_id=%s&client_secret=%s&grant_type=client_credentials";
+
+        public static final String RESOURCE_COMMON_GETCITYSERVICE = "/v1/resource/common/getCityService?access_token=%s&slat=%s&slng=%s";
     }
 }

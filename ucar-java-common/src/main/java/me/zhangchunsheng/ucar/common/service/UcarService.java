@@ -25,6 +25,13 @@ public interface UcarService {
      */
     String getBaseUrl();
 
+    /**
+     * 获取神州专车请求url前缀
+     *
+     * @return the ride base url
+     */
+    String getRideBaseUrl();
+
     public UcarConfig getConfig();
 
     public void setConfig(UcarConfig config);

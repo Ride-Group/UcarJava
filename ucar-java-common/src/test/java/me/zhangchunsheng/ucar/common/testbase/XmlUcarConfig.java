@@ -8,8 +8,19 @@ import me.zhangchunsheng.ucar.common.config.UcarConfig;
  */
 @XStreamAlias("xml")
 public class XmlUcarConfig extends UcarConfig {
+    private boolean useSandbox;
     private String clientId;
     private String clientSecret;
+
+    @Override
+    public boolean isUseSandbox() {
+        return useSandbox;
+    }
+
+    @Override
+    public void setUseSandbox(boolean useSandbox) {
+        this.useSandbox = useSandbox;
+    }
 
     @Override
     public String getClientId() {

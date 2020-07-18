@@ -8,7 +8,7 @@ import me.zhangchunsheng.ucar.common.bean.result.BaseUcarResult;
 /**
  * <pre>
  * 神州专车异常结果类
- * Created by Chunsheng Zhang on 2020-4-20.
+ * Created by Chunsheng Zhang on 2020-7-18.
  * </pre>
  *
  * @author ChunshengZhang

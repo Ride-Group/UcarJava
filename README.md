@@ -3,7 +3,7 @@
 
 ### 使用SDK
 ```java
-// spring boot, inject geoService
+// spring boot, inject oauth2Service
 TokenResult result = this.oauth2Service.clientToken();
 ```
 ### Maven 引用方式

@@ -40,13 +40,13 @@ public class UcarOauth2AutoConfiguration {
      */
     @Bean
     @ConditionalOnMissingBean(Oauth2Service.class)
-    public Oauth2Service geoService() {
-        final Oauth2ServiceImpl geoService = new Oauth2ServiceImpl();
+    public Oauth2Service oauth2Service() {
+        final Oauth2ServiceImpl oauth2Service = new Oauth2ServiceImpl();
         UcarConfig ucarConfig = new UcarConfig();
         ucarConfig.setClientId(StringUtils.trimToNull(this.properties.getClientId()));
         ucarConfig.setClientSecret(StringUtils.trimToNull(this.properties.getClientSecret()));
 
-        geoService.setConfig(ucarConfig);
-        return geoService;
+        oauth2Service.setConfig(ucarConfig);
+        return oauth2Service;
     }
 }

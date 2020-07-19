@@ -25,7 +25,7 @@ public class GetCityServiceDetailResult extends BaseUcarResult {
     private Content content;
 
     public static class Content {
-        private CarGroups carGroups;
+        private Map<String, CarGroup> carGroups;
         private int cityId;
         private String cityName;
         private int serviceId;
@@ -47,7 +47,7 @@ public class GetCityServiceDetailResult extends BaseUcarResult {
      *         "image":"https://s.10101111cdn.com/ucarcdnstore/image/app/haohua.png",
      *         "sort": 5
      */
-    public static class CarGroups {
+    public static class CarGroup {
         private String desc;
         private String freeDistance;
         private String freeTime;

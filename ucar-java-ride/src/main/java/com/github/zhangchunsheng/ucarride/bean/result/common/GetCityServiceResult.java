@@ -34,6 +34,7 @@ public class GetCityServiceResult extends BaseUcarResult {
     public static class Service {
         private int id;
         private String name;
+        private int basePriceSchemeId;
     }
 
     public static GetCityServiceResult fromJson(String json) {

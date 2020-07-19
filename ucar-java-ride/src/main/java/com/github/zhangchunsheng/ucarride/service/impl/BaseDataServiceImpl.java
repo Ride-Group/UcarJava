@@ -1,5 +1,6 @@
 package com.github.zhangchunsheng.ucarride.service.impl;
 
+import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceDetailResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceResult;
 import com.github.zhangchunsheng.ucarride.service.BaseDataService;
 import me.zhangchunsheng.ucar.common.constant.UcarConstants;
@@ -22,5 +23,11 @@ public class BaseDataServiceImpl extends UcarServiceApacheHttpImpl implements Ba
     public GetCityServiceResult getCityService(String accessToken, double slat, double slng) throws UcarException {
         String responseContent = this.get(String.format(this.getConfig().getRideBaseUrl() + UcarConstants.Url.RESOURCE_COMMON_GETCITYSERVICE, accessToken, slat, slng));
         return GetCityServiceResult.fromJson(responseContent);
+    }
+
+    @Override
+    public GetCityServiceDetailResult getCityServiceDetail(String accessToken, double slat, double slng, int serviceId, int cityId) throws UcarException {
+        String responseContent = this.get(String.format(this.getConfig().getRideBaseUrl() + UcarConstants.Url.RESOURCE_COMMON_GETCITYSERVICE_DETAIL, accessToken, slat, slng, serviceId, cityId));
+        return GetCityServiceDetailResult.fromJson(responseContent);
     }
 }

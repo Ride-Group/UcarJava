@@ -1,5 +1,6 @@
 package com.github.zhangchunsheng.ucarride.service;
 
+import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceDetailResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceResult;
 import me.zhangchunsheng.ucar.common.exception.UcarException;
 import me.zhangchunsheng.ucar.common.service.UcarService;
@@ -18,5 +19,7 @@ import me.zhangchunsheng.ucar.common.service.UcarService;
 public interface BaseDataService extends UcarService {
 
     public GetCityServiceResult getCityService(String accessToken, double slat, double slng) throws UcarException;
+
+    public GetCityServiceDetailResult getCityServiceDetail(String accessToken, double slat, double slng, int serviceId, int cityId) throws UcarException;
 
 }

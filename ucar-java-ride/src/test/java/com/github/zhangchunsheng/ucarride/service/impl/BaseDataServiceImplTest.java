@@ -1,7 +1,9 @@
 package com.github.zhangchunsheng.ucarride.service.impl;
 
+import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceDetailResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceResult;
 import com.github.zhangchunsheng.ucarride.service.BaseDataService;
+import com.github.zhangchunsheng.ucarride.service.BaseTest;
 import com.github.zhangchunsheng.ucarride.testbase.ApiTestModule;
 import com.google.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +23,7 @@ import static org.testng.Assert.*;
 @Slf4j
 @Test
 @Guice(modules = ApiTestModule.class)
-public class BaseDataServiceImplTest {
+public class BaseDataServiceImplTest extends BaseTest {
 
     @Inject
     private BaseDataService baseDataService;
@@ -31,7 +33,14 @@ public class BaseDataServiceImplTest {
         //{"busiCode":"BASE000","code":15,"content":null,"handler":"CLIENT","msg":"TOKEN失效","status":"TOKEN_INVALID","uid":"","version":"001"}
         //b57e48cb-103a-49e2-a209-a385957e96c9
         //06342a58-1c90-4ac4-acc7-b62bb83188cd
-        GetCityServiceResult result = this.baseDataService.getCityService("06342a58-1c90-4ac4-acc7-b62bb83188cd", 39.955538, 116.458637);
+        GetCityServiceResult result = this.baseDataService.getCityService(ACCESS_TOKEN, SLAT, SLNG);
+        assertEquals("SUCCESS", result.getStatus());
+    }
+
+    @Test
+    public void testGetCityServiceDetail() throws UcarException {
+        //{"busiCode":"BASE000","code":15,"content":null,"handler":"CLIENT","msg":"TOKEN失效","status":"TOKEN_INVALID","uid":"","version":"001"}
+        GetCityServiceDetailResult result = this.baseDataService.getCityServiceDetail(ACCESS_TOKEN, SLAT, SLNG, SERVICE, CITY);
         assertEquals("SUCCESS", result.getStatus());
     }
 }

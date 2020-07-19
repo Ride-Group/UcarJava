@@ -16,6 +16,61 @@ import java.util.List;
  */
 public class UcarConstants {
     /**
+     * 产品信息.
+     */
+    public static class Service {
+        /**
+         * 立即叫车.
+         */
+        public static final int ASAP = 14;
+
+        /**
+         * 预约用车.
+         */
+        public static final int TIME_RENT = 13;
+
+        /**
+         * 接机.
+         */
+        public static final int FROM_AIRPORT = 7;
+
+        /**
+         * 送机.
+         */
+        public static final int TO_AIRPORT = 8;
+
+        /**
+         * 包车（4小时）.
+         */
+        public static final int HOURLY_COMBO = 11;
+    }
+
+    /**
+     * 车型.
+     */
+    public static class CarGroup {
+        /**
+         * 优驾舒享.
+         */
+        public static final int YOU_XIANG = 1;
+
+        /**
+         * 公务轿车.
+         */
+        public static final int GONG_WU = 2;
+
+        /**
+         * 商务7座.
+         */
+        public static final int SHANG_WU = 3;
+
+        /**
+         * 豪华轿车.
+         */
+        public static final int HAO_HUA = 4;
+    }
+
+    /**
      * 结果代码.
      */
     public static class ResultStatus {
@@ -39,5 +94,6 @@ public class UcarConstants {
         public static final String OAUTH_CLIENT_TOKEN = "client_id=%s&client_secret=%s&grant_type=client_credentials";
 
         public static final String RESOURCE_COMMON_GETCITYSERVICE = "/v1/resource/common/getCityService?access_token=%s&slat=%s&slng=%s";
+        public static final String RESOURCE_COMMON_GETCITYSERVICE_DETAIL = "/v1/resource/common/getCityServiceDetail?access_token=%s&slat=%s&slng=%s&serviceId=%s&cityId=%s";
     }
 }

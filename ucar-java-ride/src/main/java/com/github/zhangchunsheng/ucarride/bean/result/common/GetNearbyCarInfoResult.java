@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import me.zhangchunsheng.ucar.common.bean.result.BaseUcarResult;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,19 +19,16 @@ import java.util.Map;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class GetCityServiceDetailResult extends BaseUcarResult {
-    private static final long serialVersionUID = -1707576958339934210L;
+public class GetNearbyCarInfoResult extends BaseUcarResult {
+    private static final long serialVersionUID = 1707576958339934210L;
 
     @SerializedName("content")
     private Content content;
 
     public static class Content {
-        private Map<String, CarGroup> carGroups;
-        private int cityId;
-        private String cityName;
-        private int serviceId;
-        private String serviceName;
-        private int priceStrategyFlag;
+        private List<Position> carList;
+        private int number;
+        private int shortestTimeOfArrival;
     }
 
     /**
@@ -62,8 +60,8 @@ public class GetCityServiceDetailResult extends BaseUcarResult {
         private int sort;
     }
 
-    public static GetCityServiceDetailResult fromJson(String json) {
-        return UcarGsonBuilder.create().fromJson(json, GetCityServiceDetailResult.class);
+    public static GetNearbyCarInfoResult fromJson(String json) {
+        return UcarGsonBuilder.create().fromJson(json, GetNearbyCarInfoResult.class);
     }
 
     @Override

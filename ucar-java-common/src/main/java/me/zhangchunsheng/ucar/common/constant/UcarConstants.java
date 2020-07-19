@@ -95,5 +95,6 @@ public class UcarConstants {
 
         public static final String RESOURCE_COMMON_GETCITYSERVICE = "/v1/resource/common/getCityService?access_token=%s&slat=%s&slng=%s";
         public static final String RESOURCE_COMMON_GETCITYSERVICE_DETAIL = "/v1/resource/common/getCityServiceDetail?access_token=%s&slat=%s&slng=%s&serviceId=%s&cityId=%s";
+        public static final String RESOURCE_COMMON_GETNEARBYCARINFO = "/v1/resource/common/getNearbyCarInfo?access_token=%s&slat=%s&slng=%s";
     }
 }

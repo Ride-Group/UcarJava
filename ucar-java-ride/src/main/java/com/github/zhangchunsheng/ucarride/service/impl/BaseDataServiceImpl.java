@@ -2,6 +2,7 @@ package com.github.zhangchunsheng.ucarride.service.impl;
 
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceDetailResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceResult;
+import com.github.zhangchunsheng.ucarride.bean.result.common.GetNearbyCarInfoResult;
 import com.github.zhangchunsheng.ucarride.service.BaseDataService;
 import me.zhangchunsheng.ucar.common.constant.UcarConstants;
 import me.zhangchunsheng.ucar.common.exception.UcarException;
@@ -29,5 +30,11 @@ public class BaseDataServiceImpl extends UcarServiceApacheHttpImpl implements Ba
     public GetCityServiceDetailResult getCityServiceDetail(String accessToken, double slat, double slng, int serviceId, int cityId) throws UcarException {
         String responseContent = this.get(String.format(this.getConfig().getRideBaseUrl() + UcarConstants.Url.RESOURCE_COMMON_GETCITYSERVICE_DETAIL, accessToken, slat, slng, serviceId, cityId));
         return GetCityServiceDetailResult.fromJson(responseContent);
+    }
+
+    @Override
+    public GetNearbyCarInfoResult getNearbyCarInfo(String accessToken, double slat, double slng) throws UcarException {
+        String responseContent = this.get(String.format(this.getConfig().getRideBaseUrl() + UcarConstants.Url.RESOURCE_COMMON_GETNEARBYCARINFO, accessToken, slat, slng));
+        return GetNearbyCarInfoResult.fromJson(responseContent);
     }
 }

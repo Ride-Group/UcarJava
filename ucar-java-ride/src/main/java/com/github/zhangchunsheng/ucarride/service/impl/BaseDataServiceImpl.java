@@ -1,5 +1,6 @@
 package com.github.zhangchunsheng.ucarride.service.impl;
 
+import com.github.zhangchunsheng.ucarride.bean.result.common.EstimatePriceResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceDetailResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetNearbyCarInfoResult;
@@ -9,6 +10,8 @@ import me.zhangchunsheng.ucar.common.exception.UcarException;
 import me.zhangchunsheng.ucar.common.service.impl.UcarServiceApacheHttpImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Map;
 
 /**
  * <pre>
@@ -36,5 +39,11 @@ public class BaseDataServiceImpl extends UcarServiceApacheHttpImpl implements Ba
     public GetNearbyCarInfoResult getNearbyCarInfo(String accessToken, double slat, double slng) throws UcarException {
         String responseContent = this.get(String.format(this.getConfig().getRideBaseUrl() + UcarConstants.Url.RESOURCE_COMMON_GETNEARBYCARINFO, accessToken, slat, slng));
         return GetNearbyCarInfoResult.fromJson(responseContent);
+    }
+
+    @Override
+    public EstimatePriceResult estimatePrice(Map<String, Object> params) throws UcarException {
+        String responseContent = this.post(this.getConfig().getRideBaseUrl() + UcarConstants.Url.RESOURCE_COMMON_ESTIMATE_PRICE, params);
+        return EstimatePriceResult.fromJson(responseContent);
     }
 }

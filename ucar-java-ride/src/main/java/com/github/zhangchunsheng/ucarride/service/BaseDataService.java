@@ -1,10 +1,13 @@
 package com.github.zhangchunsheng.ucarride.service;
 
+import com.github.zhangchunsheng.ucarride.bean.result.common.EstimatePriceResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceDetailResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetCityServiceResult;
 import com.github.zhangchunsheng.ucarride.bean.result.common.GetNearbyCarInfoResult;
 import me.zhangchunsheng.ucar.common.exception.UcarException;
 import me.zhangchunsheng.ucar.common.service.UcarService;
+
+import java.util.Map;
 
 /**
  * <pre>
@@ -24,4 +27,6 @@ public interface BaseDataService extends UcarService {
     public GetCityServiceDetailResult getCityServiceDetail(String accessToken, double slat, double slng, int serviceId, int cityId) throws UcarException;
 
     public GetNearbyCarInfoResult getNearbyCarInfo(String accessToken, double slat, double slng) throws UcarException;
+
+    public EstimatePriceResult estimatePrice(Map<String, Object> params) throws UcarException;
 }

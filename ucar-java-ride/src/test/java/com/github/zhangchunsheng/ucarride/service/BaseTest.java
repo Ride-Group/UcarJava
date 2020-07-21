@@ -98,7 +98,7 @@ public class BaseTest {
          * isPickupVip	boolean	是	是否使用接机礼宾服务(服务类型为接机时有效)
          */
         Map<String, Object> params = getEstimatePriceParams();
-        params.put("isUseCoupon", 1);
+        params.put("isUseCoupon", String.valueOf(1));
         params.put("passengerMobile", "18911116666");
 
         return params;

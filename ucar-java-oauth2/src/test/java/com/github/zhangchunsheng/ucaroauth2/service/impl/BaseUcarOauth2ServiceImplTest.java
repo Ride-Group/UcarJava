@@ -43,6 +43,7 @@ public class BaseUcarOauth2ServiceImplTest {
          * {"access_token":"b57e48cb-103a-49e2-a209-a385957e96c9","token_type":"bearer","expires_in":39671,"scope":"read"}
          * {"access_token":"06342a58-1c90-4ac4-acc7-b62bb83188cd","token_type":"bearer","expires_in":43199,"scope":"read"}
          * {"access_token":"3220985e-7c75-4f34-824e-8ca423d170b9","token_type":"bearer","expires_in":43199,"scope":"read"}
+         * {"access_token":"c6a7c6d9-797c-494c-84b9-cff048b988ca","token_type":"bearer","expires_in":43199,"scope":"read"}
          */
         TokenResult result = this.oauth2Service.clientToken();
         Assert.assertNotNull(result.getAccessToken());

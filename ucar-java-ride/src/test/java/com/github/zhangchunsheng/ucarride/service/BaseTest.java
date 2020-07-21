@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BaseTest {
-    public final static String ACCESS_TOKEN = "3220985e-7c75-4f34-824e-8ca423d170b9";
+    public final static String ACCESS_TOKEN = "c6a7c6d9-797c-494c-84b9-cff048b988ca";
     protected final static int CITY = 1;
     protected final static int SERVICE = 14;
 

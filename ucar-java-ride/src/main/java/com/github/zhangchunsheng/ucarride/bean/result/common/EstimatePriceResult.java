@@ -60,10 +60,40 @@ public class EstimatePriceResult extends BaseUcarResult {
      *         "possibleGenerateOutCityPrice":0
      *       }
      *
+     * {
+     *         "carGroupId": 1,
+     *         "companyDiscountAmount": 0,
+     *         "couponAmount": 0,
+     *         "couponId": "",
+     *         "couponKind": 0,
+     *         "couponTitle": "",
+     *         "floatFactor": 1,
+     *         "kilometrePrice": 375.9,
+     *         "longDistancePrice": 0,
+     *         "longDistancePriceLimit": 0,
+     *         "name": "优驾舒享",
+     *         "outCityPrice": 0,
+     *         "perKilometrePrice": 2.2,
+     *         "perLongDistancePrice": 0,
+     *         "perTimePrice": 0.8,
+     *         "price": 470.9,
+     *         "priceType": 1,
+     *         "productKilometre": 0,
+     *         "productTime": 0,
+     *         "startPrice": 25,
+     *         "timePrice": 70,
+     *         "pickupServicePrice":0,
+     *         "possibleGenerateOutCityPrice":0
+     *       }
+     *
      */
     public static class Price {
         private int carGroupId;
         private double companyDiscountAmount;
+        private double couponAmount;
+        private String couponId;
+        private int couponKind;
+        private String couponTitle;
         private double floatFactor;
         private double kilometrePrice;
         private double longDistancePrice;

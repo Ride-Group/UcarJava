@@ -29,4 +29,6 @@ public interface BaseDataService extends UcarService {
     public GetNearbyCarInfoResult getNearbyCarInfo(String accessToken, double slat, double slng) throws UcarException;
 
     public EstimatePriceResult estimatePrice(Map<String, Object> params) throws UcarException;
+
+    public EstimatePriceResult estimatePriceWithCoupon(Map<String, Object> params) throws UcarException;
 }

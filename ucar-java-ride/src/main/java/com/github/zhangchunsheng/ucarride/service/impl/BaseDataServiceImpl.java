@@ -46,4 +46,10 @@ public class BaseDataServiceImpl extends UcarServiceApacheHttpImpl implements Ba
         String responseContent = this.post(this.getConfig().getRideBaseUrl() + UcarConstants.Url.RESOURCE_COMMON_ESTIMATE_PRICE, params);
         return EstimatePriceResult.fromJson(responseContent);
     }
+
+    @Override
+    public EstimatePriceResult estimatePriceWithCoupon(Map<String, Object> params) throws UcarException {
+        String responseContent = this.post(this.getConfig().getRideBaseUrl() + UcarConstants.Url.RESOURCE_COMMON_ESTIMATE_PRICEWITHCOUPON, params);
+        return EstimatePriceResult.fromJson(responseContent);
+    }
 }

@@ -97,24 +97,9 @@ public class BaseTest {
          * passengerMobile	string	是	乘客手机号（是否使用代金券为“1”时必填）
          * isPickupVip	boolean	是	是否使用接机礼宾服务(服务类型为接机时有效)
          */
-        long time = System.currentTimeMillis();
-        time = time / 1000;
-        Map<String, Object> params = new HashMap<>();
-        params.put("access_token", ACCESS_TOKEN);
-        params.put("slat", String.valueOf(SLAT));
-        params.put("slng", String.valueOf(SLNG));
-        params.put("elat", "39.159693");
-        params.put("elng", "117.393305");
-        params.put("serviceId", String.valueOf(SERVICE));
-        params.put("cityId", String.valueOf(CITY));
+        Map<String, Object> params = getEstimatePriceParams();
         params.put("isUseCoupon", 1);
         params.put("passengerMobile", "18911116666");
-        /*params.put("departureTime", time);
-        params.put("flt", "");
-        params.put("flightDate", time);
-        params.put("flightDelayTime", 10);
-        params.put("airCode", "");
-        params.put("isPickupVip", 1);*/
 
         return params;
     }
